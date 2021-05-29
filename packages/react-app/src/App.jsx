@@ -455,9 +455,7 @@ function App(props) {
                           </div>
                         }
                       >
-                        <div>
-                          <img src={item.image} style={{ maxWidth: 150 }} />
-                        </div>
+
                         <div>{item.description}</div>
                       </Card>
 
@@ -589,7 +587,7 @@ function App(props) {
           </Route>
           <Route path="/debugcontracts">
             <Contract
-              name="YourCollectible"
+              name="BoatNFT"
               signer={userProvider.getSigner()}
               provider={localProvider}
               address={address}

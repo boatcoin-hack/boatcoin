@@ -12,35 +12,35 @@ const delayMS = 1000 //sometimes xDAI needs a 6000ms break lol 😅
 const main = async () => {
 
   // ADDRESS TO MINT TO:
-  const toAddress = "0xD75b0609ed51307E13bae0F9394b5f63A7f8b6A1"
+  const toAddress = "0xE41Bd2bb1EA7E75205fc87fe37A9374277918111"
 
   console.log("\n\n 🎫 Minting to "+toAddress+"...\n");
 
-  const yourCollectible = await ethers.getContractAt('YourCollectible', fs.readFileSync("./artifacts/YourCollectible.address").toString())
+  const yourCollectible = await ethers.getContractAt('BoatNFT', fs.readFileSync("./artifacts/BoatNFT.address").toString())
 
 
-  const buffalo = {
-    "description": "It's actually a bison?",
+  const jetSki = {
+    "description": "Kawasaki JET SKI® ULTRA® 310LX",
     "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://austingriffith.com/images/paintings/buffalo.jpg",
-    "name": "Buffalo",
+    "image": "https://ipfs.io/ipfs/QmfEUEah1ZN31hCRNbVvLRUmm3Jv8SpJTPekocZk3KyKLN",
+    "name": "JET SKI® ULTRA® 310LX",
     "attributes": [
        {
-         "trait_type": "BackgroundColor",
-         "value": "green"
+         "trait_type": "Type",
+         "value": "Jet Ski"
        },
        {
-         "trait_type": "Eyes",
-         "value": "googly"
+         "trait_type": "Brand",
+         "value": "Kawasaki"
        },
        {
-         "trait_type": "Stamina",
-         "value": 42
+         "trait_type": "Capacity(Person)",
+         "value": 2
        }
     ]
   }
-  console.log("Uploading buffalo...")
-  const uploaded = await ipfs.add(JSON.stringify(buffalo))
+  console.log("Uploading Jet Ski...")
+  const uploaded = await ipfs.add(JSON.stringify(jetSki))
 
   console.log("Minting buffalo with IPFS hash ("+uploaded.path+")")
   await yourCollectible.mintItem(toAddress,uploaded.path,{gasLimit:400000})
@@ -49,28 +49,28 @@ const main = async () => {
   await sleep(delayMS)
 
 
-  const zebra = {
-    "description": "What is it so worried about?",
+  const harima = {
+    "description": "Custom built by the Ishikawajima-Harima shipyard in Japan",
     "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://austingriffith.com/images/paintings/zebra.jpg",
-    "name": "Zebra",
+    "image": "https://ipfs.io/ipfs/QmNbRyRyqd2U55oFVVwpFrDN1cuxhnsaYWKh6v75GeWmRZ",
+    "name": "Yatch Ishikawajima-Harima",
     "attributes": [
        {
-         "trait_type": "BackgroundColor",
-         "value": "blue"
+         "trait_type": "Type",
+         "value": "Yatch"
        },
        {
-         "trait_type": "Eyes",
-         "value": "googly"
+         "trait_type": "Brand",
+         "value": "Ishikawajima-Harima"
        },
        {
-         "trait_type": "Stamina",
-         "value": 38
+         "trait_type": "Capacity(Person)",
+         "value": 21
        }
     ]
   }
-  console.log("Uploading zebra...")
-  const uploadedzebra = await ipfs.add(JSON.stringify(zebra))
+  console.log("Uploading Ishikawajima-Harima...")
+  const uploadedzebra = await ipfs.add(JSON.stringify(harima))
 
   console.log("Minting zebra with IPFS hash ("+uploadedzebra.path+")")
   await yourCollectible.mintItem(toAddress,uploadedzebra.path,{gasLimit:400000})
@@ -81,22 +81,22 @@ const main = async () => {
 
 
   const rhino = {
-    "description": "What a horn!",
+    "description": "BEST OF 2017, 2018, 2019 & 2020 Award Winner! Enjoy Chicago, Illinois by boat! Charter the 31' Motor Yacht for up to 6 people. ",
     "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://austingriffith.com/images/paintings/rhino.jpg",
-    "name": "Rhino",
+    "image": "https://ipfs.io/ipfs/Qmbi9XrsHyFpptMcPM3tJ5QNtWtMzAfS335mxn75Bi5cYY",
+    "name": "Yacht",
     "attributes": [
        {
-         "trait_type": "BackgroundColor",
-         "value": "pink"
+         "trait_type": "Type",
+         "value": "Yatch"
        },
        {
-         "trait_type": "Eyes",
-         "value": "googly"
+         "trait_type": "Brand",
+         "value": "Goofy"
        },
        {
-         "trait_type": "Stamina",
-         "value": 22
+         "trait_type": "Capacity(Person)",
+         "value": 6
        }
     ]
   }
@@ -106,7 +106,7 @@ const main = async () => {
   console.log("Minting rhino with IPFS hash ("+uploadedrhino.path+")")
   await yourCollectible.mintItem(toAddress,uploadedrhino.path,{gasLimit:400000})
 
-
+/*
 
   await sleep(delayMS)
 
@@ -198,7 +198,7 @@ const main = async () => {
   console.log("Minting godzilla with IPFS hash ("+uploadedgodzilla.path+")")
   await yourCollectible.mintItem(toAddress,uploadedgodzilla.path,{gasLimit:400000})
 
-
+*/
 
 
   await sleep(delayMS)

@@ -184,11 +184,11 @@ function App(props) {
   ]);
 
   // keep track of a variable from the contract in the local React state:
-  const balance = useContractReader(readContracts, "YourCollectible", "balanceOf", [address]);
+  const balance = useContractReader(readContracts, "BoatNFT", "balanceOf", [address]);
   console.log("🤗 balance:", balance);
 
   // 📟 Listen for broadcast events
-  const transferEvents = useEventListener(readContracts, "YourCollectible", "Transfer", localProvider, 1);
+  const transferEvents = useEventListener(readContracts, "BoatNFT", "Transfer", localProvider, 1);
   console.log("📟 Transfer events:", transferEvents);
 
   //
@@ -203,9 +203,9 @@ function App(props) {
       for (let tokenIndex = 0; tokenIndex < balance; tokenIndex++) {
         try {
           console.log("GEtting token index", tokenIndex);
-          const tokenId = await readContracts.YourCollectible.tokenOfOwnerByIndex(address, tokenIndex);
+          const tokenId = await readContracts.BoatNFT.tokenOfOwnerByIndex(address, tokenIndex);
           console.log("tokenId", tokenId);
-          const tokenURI = await readContracts.YourCollectible.tokenURI(tokenId);
+          const tokenURI = await readContracts.BoatNFT.tokenURI(tokenId);
           console.log("tokenURI", tokenURI);
 
           const ipfsHash = tokenURI.replace("https://ipfs.io/ipfs/", "");
@@ -455,6 +455,11 @@ function App(props) {
                           </div>
                         }
                       >
+                          <video controls width="300">
+                              <source src={item.image}
+                                      type="video/mp4" />
+                              Sorry, your browser doesn't support embedded videos.
+                          </video>
 
                         <div>{item.description}</div>
                       </Card>

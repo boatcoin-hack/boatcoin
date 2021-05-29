@@ -12,7 +12,7 @@ const delayMS = 1000 //sometimes xDAI needs a 6000ms break lol 😅
 const main = async () => {
 
   // ADDRESS TO MINT TO:
-  const toAddress = "0x0069165C15Bb5F9B2BD7BFC906eDD08Ef0BcfB33"
+  const toAddress = "0xE41Bd2bb1EA7E75205fc87fe37A9374277918111"
 
   console.log("\n\n 🎫 Minting to "+toAddress+"...\n");
 
@@ -22,7 +22,7 @@ const main = async () => {
   const jetSki = {
     "description": "Kawasaki JET SKI® ULTRA® 310LX",
     "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://ipfs.io/ipfs/QmfEUEah1ZN31hCRNbVvLRUmm3Jv8SpJTPekocZk3KyKLN",
+    "image": "https://ipfs.io/ipfs/bafybeiebhxxgekchruydfrujbg6gw3eqj3cpny2d4zaz3y33hdczizb4ba/jetSki.mp4",
     "name": "JET SKI® ULTRA® 310LX",
     "attributes": [
        {
@@ -52,7 +52,7 @@ const main = async () => {
   const harima = {
     "description": "Custom built by the Ishikawajima-Harima shipyard in Japan",
     "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://ipfs.io/ipfs/QmNbRyRyqd2U55oFVVwpFrDN1cuxhnsaYWKh6v75GeWmRZ",
+    "image": "https://ipfs.io/ipfs/bafybeidqt7fhotp2choawb6hfrgjw77uiozj7hgq6jrtmwensz2xm2prke/yacht1.mp4",
     "name": "Yatch Ishikawajima-Harima",
     "attributes": [
        {
@@ -83,7 +83,7 @@ const main = async () => {
   const rhino = {
     "description": "BEST OF 2017, 2018, 2019 & 2020 Award Winner! Enjoy Chicago, Illinois by boat! Charter the 31' Motor Yacht for up to 6 people. ",
     "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://ipfs.io/ipfs/Qmbi9XrsHyFpptMcPM3tJ5QNtWtMzAfS335mxn75Bi5cYY",
+    "image": "https://ipfs.io/ipfs/bafybeihzbkkow7rlp2qklptfn6lqptpsonb6xh4pa63nd42z5e2lliznxa/yacht2.mp4",
     "name": "Yacht",
     "attributes": [
        {
